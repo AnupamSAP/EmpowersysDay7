@@ -1,0 +1,39 @@
+<mvc:View controllerName="com.emp.empproject7.controller.mainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <List id="idList" items="{
+                path : '/Products'
+                }">
+                <headerToolbar>
+                    <Toolbar width="100%">
+                        <content>
+                        <Title text="Products"/>
+                        <ToolbarSpacer/>
+                        <SearchField width="20%" liveChange="onSearch"/>
+                        <MultiInput id="ProdId" tokenUpdate="onDeleteToken" width="15%" valueHelpRequest="onPressProductValueHelp" />
+                        <Button text="Sort" press= "onSort"/>
+                        <Button text="Next" press="onPress"/>
+                        
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <items >
+                    <!-- <StandardListItem title="{ProductName}" description="{QuantityPerUnit}">
+                    </StandardListItem> -->
+                    <ObjectListItem type="Navigation" press="onPress"  title="{ProductName}" number="{UnitPrice}" numberUnit = "INR">
+                        <ObjectAttribute title="{QuantityPerUnit}">
+                        </ObjectAttribute>
+                        <firstStatus>
+                            <ObjectStatus text="{path : 'UnitPrice',formatter : '.formatter.statusText'}" 
+                                            state="{path :'UnitPrice',formatter : '.formatter.status'}">
+                            </ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,6 @@
+<mvc:View controllerName="com.emp.empproject7.controller.secondView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="SAPUI5 Assignment 27/08/2022:    Page 2">
+    </Page>
+    </mvc:View>
